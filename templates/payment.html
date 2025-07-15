@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Payment</title>
+</head>
+<body>
+    <main>
+        <header>    
+            <div id="qr-code">
+                <img src="{{ url_for('static', filename='template_img/qrcode.png') }}" alt="QR Code" />
+            </div>
+
+            <aside>
+                <h1>Order Received!</h1>
+                <p>
+                    Scan the QR Code with your bank app to pay for your order.
+                </p>
+
+                <div id="purchase-value">
+                    <img src="{{ url_for('static', filename='template_img/tag.svg') }}" alt="Tag icon" />
+                    <span>Amount of <strong id="amount">300,00</strong>€</span>
+                </div>
+            </aside>
+        </header>
+        <footer>
+            <div id="expiration-time">
+                <header>
+                    <small>This QR Code expires in</small>
+                    <div>
+                        <img src="{{ url_for('static', filename='template_img/clock.svg') }}" alt="Clock icon" />
+                        <span>30 minutes</span>
+                    </div>
+                </header>
+                <span>You will be notified when the payment is confirmed.</span>
+            </div>
+
+            <div id="order">
+                <small>Your order number is:</small>
+                <div>
+                    <img src="{{ url_for('static', filename='template_img/basket.svg') }}" alt="Basket icon" />
+                    <span>527485022</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
