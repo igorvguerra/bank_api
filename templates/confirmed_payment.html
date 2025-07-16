@@ -3,49 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+
     <title>Payment</title>
 </head>
 <body>
     <main>
-        <header>    
+        <header>
             <div id="qr-code">
                 <img src="{{host}}/payments/pix/qr_code/{{qr_code}}" alt="QR Code" />
+
+                <img 
+                    id="confirmed-icon"
+                    src="{{ url_for('static', filename='template_img/check.svg') }}"
+                    alt="Confirmed Payment Icon."
+                />
+
             </div>
 
             <aside>
-                <h1>Order Received!</h1>
-                <p>
-                    Scan the QR Code with your bank app to pay for your order.
+                <h1 id="title-text" style="color: #56A92F !important;">Order confirmed!</h1>
+                <p id="description">
+                    Your payment has been confirmed by your bank institution and we will procede to prepare your order for shipping!
                 </p>
 
                 <div id="purchase-value">
                     <img src="{{ url_for('static', filename='template_img/tag.svg') }}" alt="Tag icon" />
-                    <span>Amount of <strong id="amount">{{ value }}</strong>€</span>
+                    <span>Amount of <strong id="amount">300,00</strong>€</span>
                 </div>
             </aside>
         </header>
         <footer>
             <div id="expiration-time">
-                <header>
-                    <small>This QR Code expires in</small>
-                    <div>
-                        <img src="{{ url_for('static', filename='template_img/clock.svg') }}" alt="Clock icon" />
-                        <span>30 minutes</span>
-                    </div>
-                </header>
-                <span>You will be notified when the payment is confirmed.</span>
+                <img src="{{ url_for('static', filename='template_img/currency.svg') }}" alt="Currency icon" />
+                <span>Thank your for choosing us! Your payment was received!</span>
             </div>
 
             <div id="order">
                 <small>Your order number is:</small>
                 <div>
                     <img src="{{ url_for('static', filename='template_img/basket.svg') }}" alt="Basket icon" />
-                    <span>{{ payment_id }}</span>
+                    <span>527485022</span>
                 </div>
             </div>
         </footer>
