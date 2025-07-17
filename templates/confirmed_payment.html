@@ -34,7 +34,7 @@
 
                 <div id="purchase-value">
                     <img src="{{ url_for('static', filename='template_img/tag.svg') }}" alt="Tag icon" />
-                    <span>Amount of <strong id="amount">300,00</strong>€</span>
+                    <span>Amount of <strong id="amount">{{ value }}</strong>€</span>
                 </div>
             </aside>
         </header>
@@ -48,10 +48,13 @@
                 <small>Your order number is:</small>
                 <div>
                     <img src="{{ url_for('static', filename='template_img/basket.svg') }}" alt="Basket icon" />
-                    <span>527485022</span>
+                    <span>{{ payment_id }}</span>
                 </div>
             </div>
         </footer>
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+
 </body>
 </html>
